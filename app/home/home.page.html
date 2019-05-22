@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      รายการ รายรับ-รายจ่าย
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-button (click)="adddata()" expand="full">เพิ่มข้อมูล</ion-button>
+   
+  <ion-card *ngFor = "let item of dataList"> <!--วนลูปค่าที่จะโชว์-->
+    <ion-card-content>
+      รหัสสินค้า: {{item.IDproduct}} 
+      ชื่อสินค้า: {{item.nameproduct}} 
+      ราคาสินค้า: {{item.price}} 
+      ประเภทสินค้า่: {{item.category}} 
+    
+      <ion-button (click)="editdata(item.IDproduct)" expand="bt">แก้ไข </ion-button>
+     <ion-button (click)="deletedata(item.IDproduct)" expand="bt">ลบ</ion-button>
+     
+    </ion-card-content>
+  </ion-card>
+</ion-content>
